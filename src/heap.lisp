@@ -22,9 +22,7 @@
               :initarg :s)
      (comparator :initform #'<
                  :initarg :comp-fn
-                 :accessor heap-comp)
-     )
-  )
+                 :accessor heap-comp)))
 
 (defmethod heap-insert ((h heap) n)
   ;; Insert an item into the heap using the heap's comparator.
@@ -65,8 +63,7 @@
                    :s (fset:with
                        (fset:with (heap-storage h) i0 (fset:@ (heap-storage h) i1))
                        i1 orig0)
-                   :comp-fn (heap-comp h))
-                   ))
+                   :comp-fn (heap-comp h))))
 
 (defmethod heap-bubble ((h heap) (index number))
   ;; Internal: move the item at the specified index up in the heap
@@ -75,8 +72,7 @@
     (if (or (< parent 0)
             (not (funcall (heap-comp h) (fset:@ (heap-storage h) index) (fset:@ (heap-storage h) parent))))
         h
-        (heap-bubble (heap-swap h child-index parent) parent)
-        )))
+        (heap-bubble (heap-swap h child-index parent) parent))))
 
 (defmethod heap-peek ((h heap))
   ;; Peek at, but don't remove the first item in the heap (E.g. if this is a
