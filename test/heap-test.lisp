@@ -18,17 +18,17 @@
         :test #'equal))
 
 (defmacro heap-pop-test ()
-  (test 0 (car (multiple-value-list (heap-pop (heapify '(2 3 0 1))))))
+  (test 0 (nth-value 0 (heap-pop (heapify '(2 3 0 1)))))
   (test '(1 2 3)
-        (heap->list (cadr (multiple-value-list (heap-pop (heapify '(2 3 0 1))))))
+        (heap->list (nth-value 1 (heap-pop (heapify '(2 3 0 1)))))
         :test #'equal))
 
 (defmacro heap-peek-test ()
   (test 0 (heap-peek (heapify '(2 3 0 1)))))
 
 (defmacro heap-find-pos-test ()
-  (test 1 (car (multiple-value-list (heap-find-pos (heapify '(0 2 3)) 1))))
-  (test 0 (cadr (multiple-value-list (heap-find-pos (heapify '(0 2 3)) 1)))))
+  (test 1 (nth-value 0 (heap-find-pos (heapify '(0 2 3)) 1)))
+  (test 0 (nth-value 1 (heap-find-pos (heapify '(0 2 3)) 1))))
 
 (defmacro heap-comparator-test ()
   (test 0 (heap-peek (heapify '(2 3 0 1))))
@@ -40,7 +40,4 @@
   (heap-pop-test)
   (heap-peek-test)
   (heap-find-pos-test)
-  (heap-comparator-test)
-  )
-
-(run-all)
+  (heap-comparator-test))
