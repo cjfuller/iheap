@@ -8,7 +8,7 @@
   - `:comp-fn`, a function used for ordering the heap.  Defaults to #'< (i.e. min-heaps, priority-queues sorted in ascending order).
   - `:s`, the internal storage for the heap.  (Don't supply this parameter for normal usage; just use the default.)  It's expected that this is an fset:seq.
 
-- `heapify`: shortcut to make a heap from the elements of a list (use the optional `:comp` kwarg to supply a comparator for the heap)
+- `(heapify lst)`: shortcut to make a heap from the elements of a list (use the optional `:comp` kwarg to supply a comparator for the heap)
 
 #### Heapsort:
 
