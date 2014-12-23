@@ -26,7 +26,7 @@
 
 #### Examining a heap:
 
-`(heap-peek h)` returns the first element of a heap without returning it.
+`(heap-peek h)` returns the first element of a heap without removing it.
 
 `(heap-find-pos h elt)` finds the position where `elt` would be inserted into heap `h`.  Returns `(values index prev-elt)` where `index` is the position where the insertion would happen and `prev-elt` is the element just before the insertion point.  (Note that this is not a particularly efficient search.)
 
