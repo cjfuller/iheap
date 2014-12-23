@@ -12,9 +12,9 @@
 
 #### Heapsort:
 
-`(heapsort lst)`: takes a list, gives back a sorted list.  Optionally, use the kwarg `:comp` to supply a comparator for the sort.
+- `(heapsort lst)`: takes a list, gives back a sorted list.  Optionally, use the kwarg `:comp` to supply a comparator for the sort.
 
-`(heap->list h)`: takes a heap, gives back a sorted list.
+- `(heap->list h)`: takes a heap, gives back a sorted list.
 
 #### Adding elements to a heap:
 
@@ -26,10 +26,10 @@
 
 #### Examining a heap:
 
-`(heap-peek h)` returns the first element of a heap without removing it.
+- `(heap-peek h)` returns the first element of a heap without removing it.
 
-`(heap-find-pos h elt)` finds the position where `elt` would be inserted into heap `h`.  Returns `(values index prev-elt)` where `index` is the position where the insertion would happen and `prev-elt` is the element just before the insertion point.  (Note that this is not a particularly efficient search.)
+- `(heap-find-pos h elt)` finds the position where `elt` would be inserted into heap `h`.  Returns `(values index prev-elt)` where `index` is the position where the insertion would happen and `prev-elt` is the element just before the insertion point.  (Note that this is not a particularly efficient search.)
 
-`(heap-empty? h)` check if the provided heap is completely empty.
+- `(heap-empty? h)` check if the provided heap is completely empty.
 
-`(heap-size h)` get the number of elements in the provided heap.
+- `(heap-size h)` get the number of elements in the provided heap.
