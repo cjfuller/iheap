@@ -167,13 +167,3 @@
   ;; Sort the elements in the provided list using heapsort.
   ;; Return: a new list containing the sorted elements.
   (heap->list (heapify lst :comp comp)))
-
-;; (defparameter hhh (make-instance 'heap))
-
-;; (print (heap-storage (heap-insert (heap-insert (heap-insert hhh 3) 92) 1)))
-
-;; (let ((lst '(1 57 4 5 194 0 2 3 4 6 9)))
-;;   (print lst)
-;;   (print (heapsort lst))
-;;   (print (multiple-value-list (heap-find-pos (heapify lst) 58)))
-;;   )
